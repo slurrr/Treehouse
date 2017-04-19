@@ -16,19 +16,17 @@ function printList(list) {
       print(listHTML); 
 }
 
-search = prompt("Search the store to see what we have in stock. Type 'list' for all available items and 'quit' to exit.").toLowerCase();
-
 while (true) {
-  if (search === 'quit') {
-    break;
-  } else if (search === 'list') {
-    printList(inStock);
-    break;
-  } else if (inStock.indexOf(search) > -1) {
-    print("Yes, we have " + search + " in stock.");
-    break;
-  } else {
-    print("Sorry we are out of " + search);
-    break;
+  search = prompt("Search the store to see what we have in stock. Type 'list' for all available items and 'quit' to exit.").toLowerCase();  
+    if (search === 'quit') {
+      break;
+    } else if (search === 'list') {
+      printList(inStock);
+    } else {
+        if (inStock.indexOf(search) > -1) {
+          print("Yes, we have " + search + " in stock.");
+        } else {
+          print("Sorry we are out of " + search);
+    }
   }
 }
