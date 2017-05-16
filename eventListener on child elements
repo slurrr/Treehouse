@@ -1,0 +1,12 @@
+const listDiv = document.querySelector('.list');
+
+listDiv.addEventListener('mouseover', (event) => {
+  if (event.target.tagName == 'LI') {
+    event.target.textContent = event.target.textContent.toUpperCase();
+  }
+});
+listDiv.addEventListener('mouseout', (event) => {
+  if (event.target.tagName == 'LI') {
+    event.target.textContent = event.target.textContent.toLowerCase();
+  }
+});
